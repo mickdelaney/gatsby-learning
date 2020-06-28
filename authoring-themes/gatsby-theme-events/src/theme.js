@@ -17,8 +17,14 @@ export const theme = {
     default: "90vw",
     max: "540px",
   },
-  text: {
-    heading: {
+  styles: {
+    Layout: {
+      color: "gray.2",
+      fontFamily: "body",
+      fontSize: 1,
+      lineHeight: "body",
+    },
+    Header: {
       backgroundColor: "primary",
       color: "background",
       fontWeight: "bold",
@@ -30,20 +36,14 @@ export const theme = {
         color: "inherit",
       },
     },
-  },
-  layout: {
-    container: {
+    Main: {
       margin: "0 auto",
       maxWidth: "max",
       width: "default",
-      padding: 3,
-      color: "gray.2",
-      fontFamily: "body",
-      fontSize: 1,
-      lineHeight: "body",
     },
-  },
-  styles: {
+    Container: {
+      padding: 3,
+    },
     h1: {
       color: "gray.3",
       fontSize: 5,

@@ -1,6 +1,5 @@
 const fs = require("fs");
 
-// Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
   const contentPath = options.contentPath || "data";
 
@@ -10,7 +9,6 @@ exports.onPreBootstrap = ({ reporter }, options) => {
   }
 };
 
-// Define the "Event" type
 exports.sourceNodes = ({ actions }) => {
   actions.createTypes(`
     type Event implements Node @dontInfer {
@@ -25,17 +23,19 @@ exports.sourceNodes = ({ actions }) => {
   `);
 };
 
-// Define resolvers for custom fields
 exports.createResolvers = ({ createResolvers }, options) => {
   const basePath = options.basePath || "/";
+
   // Quick-and-dirty helper to convert strings into URL-friendly slugs.
   const slugify = (str) => {
     const slug = str
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)+/g, "");
+
     return `/${basePath}/${slug}`.replace(/\/\/+/g, "/");
   };
+
   createResolvers({
     Event: {
       slug: {
@@ -45,10 +45,8 @@ exports.createResolvers = ({ createResolvers }, options) => {
   });
 };
 
-// query for events and create pages
 exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const basePath = options.basePath || "/";
-
   actions.createPage({
     path: basePath,
     component: require.resolve("./src/templates/events.js"),
@@ -64,6 +62,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       }
     }
   `);
+
   if (result.errors) {
     reporter.panic("error loading events", result.errors);
     return;
@@ -73,6 +72,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   events.forEach((event) => {
     const slug = event.slug;
+
     actions.createPage({
       path: slug,
       component: require.resolve("./src/templates/event.js"),

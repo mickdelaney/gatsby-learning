@@ -1398,10 +1398,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.6.tgz#9c70eb7e7e4abc1083c8edf7151d35a19e442c00"
   integrity sha512-PKTHVgMHnK5p+kcMWWNnZuoR7O19VmHiOujmVcyN50hya7qIdDb5vvsYC+dwLxApEXiABhLozq0dlIwFeS3yjg==
 
-"@mickdelaney/gatsby-theme-events@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@mickdelaney/gatsby-theme-events/-/gatsby-theme-events-1.0.0.tgz#c0cf7cfa3c03f8a16f6f44d97835def4e74e8f4e"
-  integrity sha512-2d/Gk5Le6idoLZHQZTqVa6iSr65/0hRpaaqoALNecClpx3h8UQpVzdUCYo3tP/pvLFzoasA9bP0KiYEZ9shfKQ==
+"@mickdelaney/gatsby-theme-events@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@mickdelaney/gatsby-theme-events/-/gatsby-theme-events-1.0.2.tgz#12c6d9517da949c7516f503c34dce106bd82839d"
+  integrity sha512-+QdLMT9UFktxN/4qY/qYWWQbcdRbfxYPKRnGSCCwA/3IH0iKaPftblFS0Ni1WfePPewZp6LS1K24vYlT9P6eZQ==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"

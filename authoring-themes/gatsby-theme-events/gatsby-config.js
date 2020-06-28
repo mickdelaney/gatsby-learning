@@ -1,18 +1,22 @@
 module.exports = ({ contentPath = "data", basePath = "/" }) => ({
-    plugins: [
-      "gatsby-plugin-theme-ui",
-      {
-        resolve: "gatsby-source-filesystem",
-        options: {
-          path: contentPath,
-        },
+  siteMetadata: {
+    title: "Gatsby Events Theme",
+    headline: "Upcoming Events",
+    basePath,
+  },
+  plugins: [
+    "gatsby-plugin-theme-ui",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: contentPath,
       },
-      {
-        resolve: "gatsby-transformer-yaml",
-        options: {
-          typeName: "Event",
-        },
+    },
+    {
+      resolve: "gatsby-transformer-yaml",
+      options: {
+        typeName: "Event",
       },
-    ],
-  }
-)
+    },
+  ],
+});
